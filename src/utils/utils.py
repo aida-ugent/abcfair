@@ -5,7 +5,7 @@ import yaml
 import wandb
 
 from .constants import CONFIG_DIR
-from .secrets import ENTITY, PROJECT
+# from .secrets import ENTITY, PROJECT
 from dataset.base import Dataset
 
 
@@ -41,8 +41,8 @@ def import_config(existing_config, imported_config_path):
 
 def setup_logging(config):
     wandb.init(
-        entity=ENTITY,
-        project=PROJECT,
+        # entity=ENTITY,
+        # project=PROJECT,
         allow_val_change=True,
         config=config
     )

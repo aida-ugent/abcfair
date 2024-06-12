@@ -1,0 +1,17 @@
+numpy
+pandas
+wandb
+torch
+folktables
+scikit-learn
+tqdm
+fairret
+aif360
+fairlearn
+aequitas
+error-parity
+torchmetrics
+seaborn
+matplotlib
+yaml
+tabulate

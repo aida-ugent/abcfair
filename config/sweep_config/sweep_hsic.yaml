@@ -1,6 +1,3 @@
-entity: aida-ugent
-project: fairness_benchmark
-
 method: grid
 program: src/main.py
 
