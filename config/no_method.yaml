@@ -1,0 +1,6 @@
+data_config: data_config/SchoolPerformanceBiased.yaml
+method:
+  name: "no_method"
+data: 
+  main_sens_format: binary
+seed: 0

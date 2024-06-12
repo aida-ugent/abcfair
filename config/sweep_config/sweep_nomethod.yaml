@@ -1,0 +1,25 @@
+entity: aida-ugent
+project: fairness_benchmark
+
+method: grid
+program: src/main.py
+
+# Without specifying this command explicitly, all arguments will be passed on the command line.
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+
+parameters:
+  data_config:
+    values: ['ACSEmployment.yaml', 'ACSMobility.yaml', 'ACSPublicCoverage.yaml', 'ACSTravelTime.yaml']
+
+  method:
+    parameters:
+      name:
+        value: no_method
+
+  data: 
+    parameters:
+      main_sens_format:
+        value: binary

@@ -1,0 +1,14 @@
+data:
+  name: ACSEmployment
+  batch_size: 2048
+
+model:
+  dim: [512, 256, 64, 32]
+
+optim:
+  lr: 0.0001
+
+training:
+  max_epochs: 40
+
+num_threads: 1

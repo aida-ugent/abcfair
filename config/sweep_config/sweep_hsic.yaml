@@ -1,0 +1,31 @@
+entity: aida-ugent
+project: fairness_benchmark
+
+method: grid
+program: src/main.py
+
+# Without specifying this command explicitly, all arguments will be passed on the command line.
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+
+parameters:
+  data_config:
+    values: ['data_config/SchoolPerformanceUnbiased.yaml', 'data_config/ACSEmployment.yaml', 'data_config/ACSIncome.yaml', 'data_config/ACSMobility.yaml', 'data_config/ACSPublicCoverage.yaml', 'data_config/ACSTravelTime.yaml', 'data_config/SchoolPerformanceBiased.yaml']
+
+  method:
+    parameters:
+      name:
+        value: hsic
+      fairness_strength:
+        values: [0.001, 0.01, 0.1, 0.3, 1]
+      statistic:
+        value: "pr"
+
+  data:
+    parameters:
+      sensitive_attributes:
+        value: "binary"
+  seed:
+    values: [0, 1, 2, 3, 4]

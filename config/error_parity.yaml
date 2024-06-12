@@ -1,0 +1,8 @@
+data_config: data_config/ACSPublicCoverage.yaml
+method:
+  name: error_parity
+  statistic: pr
+  fairness_strength: 0.005
+data: 
+  main_sens_format: intersectional
+seed: 0

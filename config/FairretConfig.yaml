@@ -1,0 +1,9 @@
+data_config: data_config/SchoolPerformanceBiased.yaml
+method:
+  name: "fairret"
+  fairness_strength: 1
+  statistic: "pr"
+  fairret: "norm"
+data: 
+  main_sens_format: binary
+seed: 0

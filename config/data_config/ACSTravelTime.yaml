@@ -1,0 +1,16 @@
+data:
+  name: ACSTravelTime
+  batch_size: 1024
+
+model:
+  dim: [16,256,128,64]
+  dropout_strength: 0.2
+
+optim:
+  lr: 0.0001
+  weight_decay_str: 0.01
+
+training:
+  max_epochs: 20
+
+num_threads: 1

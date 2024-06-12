@@ -1,0 +1,33 @@
+entity: aida-ugent
+project: fairness_benchmark
+
+method: grid
+program: src/main.py
+
+# Without specifying this command explicitly, all arguments will be passed on the command line.
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+
+parameters:
+  data_config:
+    values: ['data_config/SchoolPerformanceUnbiased.yaml', 'data_config/ACSEmployment.yaml', 'data_config/ACSMobility.yaml', 'data_config/ACSPublicCoverage.yaml', 'data_config/ACSTravelTime.yaml', 'data_config/SchoolPerformanceBiased.yaml']
+
+  method:
+    parameters:
+      name:
+        value: exp_gradient
+      fairness_strength:
+        values: [0.8, 0.9, 0.95, 0.99, 1]
+      statistic:
+        values: ['pr', 'tpr', 'fpr','acc']
+      grid_size:
+        values: [5, 10]
+
+  model_options:
+    parameters:
+      sensitive_attributes:
+        values: ["binary", "intersectional"]
+  seed:
+    values: [0, 1, 2, 3, 4]

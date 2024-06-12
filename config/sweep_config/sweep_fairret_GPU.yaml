@@ -1,0 +1,35 @@
+entity: aida-ugent
+project: fairness_benchmark
+
+method: grid
+program: src/main.py
+
+# Without specifying this command explicitly, all arguments will be passed on the command line.
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+
+parameters:
+  data_config:
+    value: 'data_config/ACSPublicCoverage.yaml'
+
+  method:
+    parameters:
+      name:
+        value: fairret
+      fairness_strength:
+        values: [0.001, .01, .1, 1, 3]
+      statistic:
+        values: ['pr', 'tpr', "ppv", "acc"]
+      fairret:
+        values: ["norm", "KL_proj"]
+
+  data:
+    parameters:
+      sensitive_attributes:
+        values: ["parallel", "binary", "intersectional"]
+  seed:
+    values: [0, 1, 2, 3, 4]
+  device:
+    value: cuda

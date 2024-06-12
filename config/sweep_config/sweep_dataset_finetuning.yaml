@@ -1,0 +1,41 @@
+entity: aida-ugent
+project: fairness_benchmark
+
+method: grid
+program: src/main.py
+
+# Without specifying this command explicitly, all arguments will be passed on the command line.
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+
+parameters:
+  data:
+    parameters:
+      name: 
+        value: ACSIncome
+      batch_size: 
+        values: [1024]
+      main_sens_format:
+        value: binary
+
+  model:
+    parameters:
+      dim: 
+        values: [[256, 128, 32], [256, 128, 64]]
+      lr: 
+        values: [0.01, 0.005]
+
+  training:
+    parameters:
+      max_epochs: 
+        value: 150
+
+  seed: 
+    value: 0
+
+  method:
+    parameters:
+      name:
+        value: "no_method"

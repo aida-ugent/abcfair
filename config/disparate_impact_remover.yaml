@@ -1,0 +1,5 @@
+method:
+  name: "LearningFairRepr"
+data: 
+  main_sens_format: binary
+seed: 0

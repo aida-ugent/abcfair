@@ -1,0 +1,8 @@
+data_config: data_config/SchoolPerformanceBiased.yaml
+method:
+  name: "prejudice_remover"
+  fairness_strength: 1
+  statistic: "pr"
+data: 
+  main_sens_format: binary
+seed: 0

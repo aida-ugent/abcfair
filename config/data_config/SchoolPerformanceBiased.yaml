@@ -1,0 +1,14 @@
+data:
+  name: SchoolPerformanceBiased
+  batch_size: 64
+
+model:
+  dim: [64]
+
+optim:
+  lr: 0.001
+
+training:
+  max_epochs: 80
+
+num_threads: 1

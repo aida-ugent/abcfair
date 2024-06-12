@@ -1,0 +1,48 @@
+entity: aida-ugent
+project: fairness_benchmark
+
+method: grid
+program: src/main.py
+
+# Without specifying this command explicitly, all arguments will be passed on the command line.
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+
+parameters:
+  data:
+    parameters:
+      name: 
+        values: [SchoolPerforamanceBiased, SyntheticBiasedDataset]
+      batch_size: 
+        values: [64, 128, 256, 512]
+      main_sens_format:
+        value: binary
+
+  model:
+    parameters:
+      dim: 
+        values: [[128, 32], [64, 32], [128], [64]]
+  optim:
+    parameters:    
+      lr: 
+        values: [0.01, 0.001, 0.0001]
+      weight_decay_str: 
+        value: 0.01
+
+  training:
+    parameters:
+      max_epochs: 
+        value: 80
+
+  seed: 
+    value: 0
+
+  num_threads: 
+    value: 1
+    
+  method:
+    parameters:
+      name:
+        value: "no_method"
